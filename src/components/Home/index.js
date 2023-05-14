@@ -94,6 +94,7 @@ class Home extends Component{
         }
         const response = await fetch(url, options)
         const data = await response.json()
+        console.log(data)
         if (response.ok){
             const temp = Math.round(data.main.temp)
             const windSpeed = data.wind.speed 
@@ -114,6 +115,8 @@ class Home extends Component{
                 var weatherImg = "https://res.cloudinary.com/daflxmokq/image/upload/v1683971020/mist_ljptru.png"
             }else if (weather === "Haze"){
                 var weatherImg = "https://res.cloudinary.com/daflxmokq/image/upload/v1683970982/drizzle_ra2d9s.png"
+            }else{
+                var weatherImg = "https://res.cloudinary.com/daflxmokq/image/upload/v1684040672/1497075_issr2r.png"
             }
 
             this.setState({temp,weatherImg,windSpeed,humidity,cityname})
